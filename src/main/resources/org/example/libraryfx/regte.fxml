@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" style="-fx-background-color: #F4E4BC;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.libraryfx.Regte">
+   <children>
+      <AnchorPane prefHeight="80.0" prefWidth="800.0" style="-fx-background-color: #F4E4BC;">
+         <children>
+            <VBox alignment="CENTER" layoutX="250.0" layoutY="10.0" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: #654321; -fx-background-radius: 5px;">
+               <children>
+                  <Label text="Викладач" style="-fx-text-fill: #F4E4BC;">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="620.0" prefWidth="800.0" style="-fx-background-color: #F4E4BC;">
+         <children>
+            <Label layoutX="50.0" layoutY="20.0" text="Введіть код викладача:" style="-fx-text-fill: #654321;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="teacherCodeField" layoutX="50.0" layoutY="45.0" prefHeight="35.0" prefWidth="700.0" promptText="Введіть код викладача" style="-fx-background-color: #FFFFFF; -fx-text-fill: #654321;" />
+            
+            <Label layoutX="50.0" layoutY="90.0" text="Введіть ім'я:" style="-fx-text-fill: #654321;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameField" layoutX="50.0" layoutY="115.0" prefHeight="35.0" prefWidth="700.0" promptText="Введіть ім'я" style="-fx-background-color: #FFFFFF; -fx-text-fill: #654321;" />
+            
+            <Label layoutX="50.0" layoutY="160.0" text="Введіть прізвище:" style="-fx-text-fill: #654321;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="surnameField" layoutX="50.0" layoutY="185.0" prefHeight="35.0" prefWidth="700.0" promptText="Введіть прізвище" style="-fx-background-color: #FFFFFF; -fx-text-fill: #654321;" />
+            
+            <Label layoutX="50.0" layoutY="230.0" text="Введіть по батькові:" style="-fx-text-fill: #654321;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="patronymicField" layoutX="50.0" layoutY="255.0" prefHeight="35.0" prefWidth="700.0" promptText="Введіть по батькові" style="-fx-background-color: #FFFFFF; -fx-text-fill: #654321;" />
+            
+            <Label layoutX="50.0" layoutY="300.0" text="Введіть номер телефону:" style="-fx-text-fill: #654321;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="phoneField" layoutX="50.0" layoutY="325.0" prefHeight="35.0" prefWidth="700.0" promptText="Введіть номер телефону" style="-fx-background-color: #FFFFFF; -fx-text-fill: #654321;" />
+            
+            <Label layoutX="50.0" layoutY="370.0" text="Введіть email:" style="-fx-text-fill: #654321;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="emailField" layoutX="50.0" layoutY="395.0" prefHeight="35.0" prefWidth="700.0" promptText="Введіть email" style="-fx-background-color: #FFFFFF; -fx-text-fill: #654321;" />
+            
+            <Label layoutX="50.0" layoutY="440.0" text="Введіть логін:" style="-fx-text-fill: #654321;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="loginField" layoutX="50.0" layoutY="465.0" prefHeight="35.0" prefWidth="700.0" promptText="Введіть логін" style="-fx-background-color: #FFFFFF; -fx-text-fill: #654321;" />
+            
+            <Label layoutX="50.0" layoutY="510.0" text="Введіть пароль:" style="-fx-text-fill: #654321;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="passwordField" layoutX="50.0" layoutY="535.0" prefHeight="35.0" prefWidth="700.0" promptText="Введіть пароль" style="-fx-background-color: #FFFFFF; -fx-text-fill: #654321;" />
+            
+            <Button layoutX="300.0" layoutY="590.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-radius: 5px;" text="Зареєструватися">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox style="-fx-background-color: #F4E4BC;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.libraryfx.RegController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F4E4BC;">
+         <children>
+            <Label layoutX="200.0" layoutY="50.0" text="Оберіть тип реєстрації:" style="-fx-text-fill: #654321;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F4E4BC;">
+         <children>
+            <Button fx:id="teacherButton" layoutX="200.0" layoutY="30.0" mnemonicParsing="false" onAction="#onTeacherButtonClick" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-radius: 5px;" text="Викладач">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="studentButton" layoutX="200.0" layoutY="100.0" mnemonicParsing="false" onAction="#onStudentButtonClick" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-radius: 5px;" text="Студент">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="librarianButton" layoutX="200.0" layoutY="170.0" mnemonicParsing="false" onAction="#onLibrarianButtonClick" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-radius: 5px;" text="Бібліотекар">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
+
