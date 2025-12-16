@@ -20,4 +20,12 @@ public class Regsuc {
         Stage stage = (Stage) loginButton.getScene().getWindow();
         SceneUtils.switchScene(stage, root, "Вхід");
     }
+    
+    @FXML
+    protected void onBackButtonClick() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = (Stage) loginButton.getScene().getWindow();
+        SceneUtils.switchScene(stage, root, "Бібліотека");
+    }
 }

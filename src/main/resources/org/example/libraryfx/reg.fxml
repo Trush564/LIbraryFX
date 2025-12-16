@@ -11,6 +11,11 @@
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F4E4BC;">
          <children>
+            <Button fx:id="backButton" layoutX="50.0" layoutY="20.0" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-border-color: #654321; -fx-border-width: 2px; -fx-border-radius: 5px;" text="Назад">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
             <Label layoutX="200.0" layoutY="50.0" text="Оберіть тип реєстрації:" style="-fx-text-fill: #654321;">
                <font>
                   <Font size="20.0" />

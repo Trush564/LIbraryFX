@@ -11,10 +11,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import java.net.URL?>
 
 <BorderPane fx:id="mainPane" style="-fx-background-color: #F4E4BC;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.libraryfx.MainprofileController">
    <stylesheets>
-      <String fx:value="@styles.css" />
+      <URL value="@styles.css" />
    </stylesheets>
    <left>
       <VBox fx:id="sidebar" minWidth="150.0" style="-fx-background-color: #654321;" BorderPane.alignment="CENTER" VBox.vgrow="NEVER">

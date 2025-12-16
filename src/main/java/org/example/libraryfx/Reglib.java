@@ -83,6 +83,14 @@ public class Reglib {
         }
     }
 
+    @FXML
+    protected void onBackButtonClick() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("reg.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = (Stage) nameField.getScene().getWindow();
+        SceneUtils.switchScene(stage, root, "Реєстрація");
+    }
+
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
