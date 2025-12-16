@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import java.net.URL?>
+
+<BorderPane style="-fx-background-color: #F4E4BC;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.libraryfx.ApplicationsController">
+   <stylesheets>
+      <URL value="@styles.css" />
+   </stylesheets>
+   <left>
+      <VBox minWidth="150.0" style="-fx-background-color: #654321;" BorderPane.alignment="CENTER" VBox.vgrow="NEVER">
+         <children>
+            <HBox alignment="CENTER_LEFT" minHeight="50.0" spacing="5.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../profile_icon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <VBox>
+                     <children>
+                        <Label text="Student" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="y.tyha23" textFill="WHITE">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                        <Label text="yuliatukha@gmail.com" textFill="WHITE">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClick" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Історія">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+               <minHeight>20.0</minHeight>
+               <minWidth>100.0</minWidth>
+            </Button>
+            <Button fx:id="searchNavButton" mnemonicParsing="false" onAction="#onSearchButtonClick" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Пошук книги">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+               <minHeight>20.0</minHeight>
+               <minWidth>100.0</minWidth>
+            </Button>
+            <Button fx:id="catalogButton" mnemonicParsing="false" onAction="#onCatalogButtonClick" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Каталог книг">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+               <minHeight>20.0</minHeight>
+               <minWidth>100.0</minWidth>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onReserveButtonClick" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Забронювати">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+               <minHeight>20.0</minHeight>
+               <minWidth>100.0</minWidth>
+            </Button>
+            <Button fx:id="applicationsButton" mnemonicParsing="false" style="-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #000000; -fx-border-width: 2px; -fx-border-radius: 3px;" text="Подані заяви">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+               <minHeight>20.0</minHeight>
+               <minWidth>100.0</minWidth>
+            </Button>
+            <Button fx:id="rateButton" mnemonicParsing="false" onAction="#onRateButtonClick" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Оцінити книгу">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+               <minHeight>20.0</minHeight>
+               <minWidth>100.0</minWidth>
+            </Button>
+            <Button fx:id="reviewsButton" mnemonicParsing="false" onAction="#onReviewsButtonClick" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Відгуки">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+               <minHeight>20.0</minHeight>
+               <minWidth>100.0</minWidth>
+            </Button>
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onLogoutButtonClick" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Вийти">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <top>
+      <Pane minHeight="50.0" style="-fx-background-color: #F4E4BC;" BorderPane.alignment="CENTER" VBox.vgrow="NEVER">
+         <children>
+            <Button fx:id="backToMainButton" layoutX="20.0" layoutY="10.0" mnemonicParsing="false" onAction="#onBackToMainButtonClick" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-radius: 5px;" text="Повернутись до головного меню">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="425.0" layoutY="12.0" style="-fx-background-color: #F4E4BC; -fx-border-color: #654321; -fx-border-width: 1px; -fx-border-radius: 5px; -fx-padding: 5px 10px;" text="Подані заяви" textFill="#654321">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <ScrollPane fitToWidth="true" styleClass="scroll-pane" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS" minHeight="0.0">
+         <content>
+            <VBox fx:id="applicationsContainer" spacing="10.0" style="-fx-background-color: #F4E4BC;" VBox.vgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>
+

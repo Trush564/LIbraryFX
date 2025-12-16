@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-background-color: #F4E4BC;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.libraryfx.RateBookController">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="150.0" style="-fx-background-color: #654321;" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onHistoryButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Історія">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Пошук книги">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Каталог книг">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onReserveButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Забронювати">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onApplicationsButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Подані заяви">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="rateButton" mnemonicParsing="false" onAction="#onRateButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Оцінити книгу">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onReviewsButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Відгуки">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onLogoutButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Вийти">
+               <VBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <top>
+      <Pane prefHeight="85.0" prefWidth="80.0" style="-fx-background-color: #F4E4BC;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="backToMainButton" layoutX="20.0" layoutY="10.0" mnemonicParsing="false" onAction="#onBackToMainButtonClick" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-radius: 5px;" text="Повернутись до головного меню">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="60.0" layoutY="16.0" text="Student">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="61.0" layoutY="39.0" text="y.tyha23">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="9.0" layoutY="67.0" text="yuliatukha@gmail.com" />
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <StackPane style="-fx-background-color: #F4E4BC;" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS">
+         <children>
+            <ImageView fx:id="backgroundBookImage" fitHeight="600.0" fitWidth="900.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../книга1.jpeg" />
+               </image>
+            </ImageView>
+            <VBox spacing="20.0" style="-fx-background-color: rgba(244, 228, 188, 0.8);" alignment="CENTER">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Label text="Оберіть оцінку (0-5 зірок):">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox spacing="10.0">
+                     <children>
+                        <ImageView fx:id="star1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="star2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="star3" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="star4" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fx:id="star5" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+                  <Label text="Напишіть відгук:" />
+                  <TextArea fx:id="reviewTextArea" prefHeight="150.0" prefWidth="500.0" promptText="Введіть ваш відгук..." style="-fx-background-color: #FFFFFF; -fx-text-fill: #654321;" />
+                  <Button fx:id="submitRateButton" mnemonicParsing="false" onAction="#onSubmitRateClick" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-radius: 5px;" text="Підтвердити">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>
+

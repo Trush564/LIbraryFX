@@ -1,0 +1,29 @@
+.scroll-pane {
+    -fx-background-color: #F4E4BC;
+    -fx-control-inner-background: #F4E4BC;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: #F4E4BC;
+}
+
+.scroll-pane .content {
+    -fx-background-color: #F4E4BC;
+}
+
+.scroll-pane .scroll-bar {
+    -fx-background-color: #F4E4BC;
+}
+
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: #654321;
+}
+
+.scroll-pane .scroll-bar .track {
+    -fx-background-color: #F4E4BC;
+}
+
+.scroll-pane .corner {
+    -fx-background-color: #F4E4BC;
+}
+
