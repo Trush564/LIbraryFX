@@ -1,3 +1,4 @@
+/* ScrollPane Styles */
 .scroll-pane {
     -fx-background-color: #F4E4BC;
     -fx-control-inner-background: #F4E4BC;
@@ -27,3 +28,127 @@
     -fx-background-color: #F4E4BC;
 }
 
+/* Sidebar Button Styles */
+.sidebar-button {
+    -fx-background-color: #F4E4BC;
+    -fx-text-fill: #654321;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-border-color: #CCCCCC;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-cursor: hand;
+}
+
+.sidebar-button:hover {
+    -fx-background-color: #E8D4A0;
+    -fx-border-color: #654321;
+}
+
+.sidebar-button-active {
+    -fx-background-color: #654321;
+    -fx-text-fill: #F4E4BC;
+    -fx-border-color: #000000;
+    -fx-border-width: 2px;
+    -fx-border-radius: 3px;
+}
+
+.sidebar-button-active:hover {
+    -fx-background-color: #5a3b20;
+}
+
+/* Page Title Styles */
+.page-title {
+    -fx-background-color: #F4E4BC;
+    -fx-background-radius: 5px;
+    -fx-border-color: #654321;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px 10px;
+    -fx-text-fill: #654321;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* Book Card Styles */
+.book-card {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 15px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0.2, 0, 2);
+}
+
+.book-card-title {
+    -fx-text-fill: #654321;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.book-card-text {
+    -fx-text-fill: #654321;
+    -fx-font-size: 14px;
+}
+
+.book-card-label {
+    -fx-text-fill: #654321;
+    -fx-font-size: 14px;
+}
+
+/* Category Label Styles */
+.category-label {
+    -fx-text-fill: #654321;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* Button Styles */
+.primary-button {
+    -fx-background-color: #654321;
+    -fx-text-fill: #F4E4BC;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+}
+
+.primary-button:hover {
+    -fx-background-color: #5a3b20;
+}
+
+.secondary-button {
+    -fx-background-color: #F4E4BC;
+    -fx-text-fill: #654321;
+    -fx-border-color: #654321;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #E8D4A0;
+}
+
+/* Text Field Styles */
+.text-field {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #654321;
+    -fx-border-color: #CCCCCC;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-padding: 5px;
+}
+
+.text-field:focused {
+    -fx-border-color: #654321;
+    -fx-border-width: 2px;
+}
+
+/* Search Result Card */
+.search-result-card {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #CCCCCC;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 4, 0.1, 0, 1);
+}

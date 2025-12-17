@@ -58,56 +58,56 @@
                   <Insets bottom="10.0" top="10.0" />
                </VBox.margin>
             </HBox>
-            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClick" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Історія">
+            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClick" styleClass="sidebar-button" text="Історія">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
                <minHeight>20.0</minHeight>
                <minWidth>100.0</minWidth>
             </Button>
-            <Button fx:id="searchNavButton" mnemonicParsing="false" onAction="#onSearchButtonClick" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Пошук книги">
+            <Button fx:id="searchNavButton" mnemonicParsing="false" onAction="#onSearchButtonClick" styleClass="sidebar-button" text="Пошук книги">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
                <minHeight>20.0</minHeight>
                <minWidth>100.0</minWidth>
             </Button>
-            <Button fx:id="catalogButton" mnemonicParsing="false" onAction="#onCatalogButtonClick" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Каталог книг">
+            <Button fx:id="catalogButton" mnemonicParsing="false" onAction="#onCatalogButtonClick" styleClass="sidebar-button" text="Каталог книг">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
                <minHeight>20.0</minHeight>
                <minWidth>100.0</minWidth>
             </Button>
-            <Button mnemonicParsing="false" onAction="#onReserveButtonClick" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Забронювати">
+            <Button mnemonicParsing="false" onAction="#onReserveButtonClick" styleClass="sidebar-button" text="Забронювати">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
                <minHeight>20.0</minHeight>
                <minWidth>100.0</minWidth>
             </Button>
-            <Button fx:id="applicationsButton" mnemonicParsing="false" style="-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #000000; -fx-border-width: 2px; -fx-border-radius: 3px;" text="Подані заяви">
+            <Button fx:id="applicationsButton" mnemonicParsing="false" styleClass="sidebar-button-active" text="Подані заяви">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
                <minHeight>20.0</minHeight>
                <minWidth>100.0</minWidth>
             </Button>
-            <Button fx:id="rateButton" mnemonicParsing="false" onAction="#onRateButtonClick" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Оцінити книгу">
+            <Button fx:id="rateButton" mnemonicParsing="false" onAction="#onRateButtonClick" styleClass="sidebar-button" text="Оцінити книгу">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
                <minHeight>20.0</minHeight>
                <minWidth>100.0</minWidth>
             </Button>
-            <Button fx:id="reviewsButton" mnemonicParsing="false" onAction="#onReviewsButtonClick" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Відгуки">
+            <Button fx:id="reviewsButton" mnemonicParsing="false" onAction="#onReviewsButtonClick" styleClass="sidebar-button" text="Відгуки">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
                <minHeight>20.0</minHeight>
                <minWidth>100.0</minWidth>
             </Button>
-            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onLogoutButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Вийти">
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onLogoutButtonClick" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Вийти">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
@@ -126,7 +126,7 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Label layoutX="425.0" layoutY="12.0" style="-fx-background-color: #F4E4BC; -fx-border-color: #654321; -fx-border-width: 1px; -fx-border-radius: 5px; -fx-padding: 5px 10px;" text="Подані заяви" textFill="#654321">
+            <Label layoutX="425.0" layoutY="12.0" styleClass="page-title" text="Подані заяви">
                <font>
                   <Font size="18.0" />
                </font>
@@ -137,7 +137,7 @@
    <center>
       <ScrollPane fitToWidth="true" styleClass="scroll-pane" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS" minHeight="0.0">
          <content>
-            <VBox fx:id="applicationsContainer" spacing="10.0" style="-fx-background-color: #F4E4BC;" VBox.vgrow="ALWAYS">
+            <VBox fx:id="applicationsContainer" spacing="20.0" style="-fx-background-color: #F4E4BC;" VBox.vgrow="ALWAYS">
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>

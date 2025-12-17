@@ -57,42 +57,42 @@
                   <Insets bottom="10.0" top="10.0" />
                </VBox.margin>
             </HBox>
-            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Історія">
+            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#onHistoryButtonClick" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Історія">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#replaceTop" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Пошук книги">
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#replaceTop" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Пошук книги">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="catalogButton" mnemonicParsing="false" onAction="#onCatalogButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Каталог книг">
+            <Button fx:id="catalogButton" mnemonicParsing="false" onAction="#onCatalogButtonClick" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Каталог книг">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="reserveButton" mnemonicParsing="false" onAction="#onReserveButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Забронювати">
+            <Button fx:id="reserveButton" mnemonicParsing="false" onAction="#onReserveButtonClick" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Забронювати">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="applicationsButton" mnemonicParsing="false" onAction="#onApplicationsButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Подані заяви">
+            <Button fx:id="applicationsButton" mnemonicParsing="false" onAction="#onApplicationsButtonClick" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Подані заяви">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="rateButton" mnemonicParsing="false" onAction="#onRateButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Оцінити книгу">
+            <Button fx:id="rateButton" mnemonicParsing="false" onAction="#onRateButtonClick" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Оцінити книгу">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="reviewsButton" mnemonicParsing="false" onAction="#onReviewsButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Відгуки">
+            <Button fx:id="reviewsButton" mnemonicParsing="false" onAction="#onReviewsButtonClick" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Відгуки">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onLogoutButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Вийти">
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onLogoutButtonClick" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Вийти">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
@@ -106,9 +106,9 @@
    <top>
       <Pane minHeight="50.0" style="-fx-background-color: #F4E4BC;" BorderPane.alignment="CENTER" VBox.vgrow="NEVER">
          <children>
-            <VBox alignment="CENTER" layoutX="375.0" layoutY="20.0" style="-fx-background-color: #F4E4BC; -fx-background-radius: 5px; -fx-border-color: #654321; -fx-border-width: 2px; -fx-border-radius: 5px;">
+            <VBox alignment="CENTER" layoutX="375.0" layoutY="20.0" styleClass="page-title">
                <children>
-                  <Label text="Головна" style="-fx-text-fill: #654321;">
+                  <Label text="Головна">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -131,38 +131,144 @@
                <children>
                   <VBox fx:id="recommendedBooksContainer" spacing="10.0">
                      <children>
-                        <Label text="Рекомендовані книги" textFill="#654321">
+                        <Label text="Рекомендовані книги" styleClass="category-label">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
+                        <HBox spacing="15.0">
+                           <children>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@images/book.jpg" /></image>
+                              </ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@images/book.jpg" /></image>
+                              </ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@images/book.jpg" /></image>
+                              </ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@images/book.jpg" /></image>
+                              </ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@images/book.jpg" /></image>
+                              </ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@images/book.jpg" /></image>
+                              </ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@images/book.jpg" /></image>
+                              </ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@images/book.jpg" /></image>
+                              </ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@images/book.jpg" /></image>
+                              </ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@images/book.jpg" /></image>
+                              </ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@images/book.jpg" /></image>
+                              </ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@images/book.jpg" /></image>
+                              </ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@images/book.jpg" /></image>
+                              </ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@images/book.jpg" /></image>
+                              </ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image><Image url="@images/book.jpg" /></image>
+                              </ImageView>
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
                   <VBox fx:id="scientificBooksContainer" spacing="10.0">
                      <children>
-                        <Label text="Наукова література" textFill="#654321">
+                        <Label text="Наукова література" styleClass="category-label">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
+                        <HBox spacing="15.0">
+                           <children>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
                   <VBox fx:id="fantasyBooksContainer" spacing="10.0">
                      <children>
-                        <Label text="Фантастика" textFill="#654321">
+                        <Label text="Фантастика" styleClass="category-label">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
+                        <HBox spacing="15.0">
+                           <children>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
                   <VBox fx:id="top100BooksContainer" spacing="10.0">
                      <children>
-                        <Label text="ТОП-100" textFill="#654321">
+                        <Label text="ТОП-100" styleClass="category-label">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Label>
+                        <HBox spacing="15.0">
+                           <children>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                              <ImageView fitHeight="120.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@images/book.jpg" /></image></ImageView>
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
                </children>

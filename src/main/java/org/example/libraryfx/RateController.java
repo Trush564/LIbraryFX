@@ -48,18 +48,8 @@ public class RateController {
     }
     
     private void highlightActiveButton(Button button) {
-        if (rateButton != null) {
-            rateButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            rateButton.setFocusTraversable(false);
-        }
-        if (catalogButton != null) {
-            catalogButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            catalogButton.setFocusTraversable(false);
-        }
-        if (button != null) {
-            button.setStyle("-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-color: #000000; -fx-border-width: 2px; -fx-border-radius: 3px; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;");
-            button.setFocusTraversable(false);
-        }
+        // RateController має обмежений набір кнопок, тому використовуємо тільки ті, що є
+        ButtonStyleUtils.setActiveButton(button, rateButton, catalogButton, reviewsButton, logoutButton);
     }
     
     /**
@@ -91,14 +81,13 @@ public class RateController {
         
         javafx.scene.image.ImageView imageView = new javafx.scene.image.ImageView();
         try {
-            String path = (book.getCoverImagePath() != null && !book.getCoverImagePath().isEmpty())
-                    ? book.getCoverImagePath()
-                    : "/images/book.jpg";
+            // Завжди використовуємо book.jpg для всіх книг з resources/org/example/libraryfx/images
+            String imagePath = "/org/example/libraryfx/images/book.jpg";
             javafx.scene.image.Image image = new javafx.scene.image.Image(
-                    getClass().getResourceAsStream(path));
+                    RateController.class.getResourceAsStream(imagePath));
             imageView.setImage(image);
         } catch (Exception e) {
-            System.err.println("Failed to load image for rating page: " + book.getCoverImagePath() + " - " + e.getMessage());
+            System.err.println("Failed to load book image: " + e.getMessage());
         }
         imageView.setFitHeight(150);
         imageView.setFitWidth(100);
@@ -106,7 +95,7 @@ public class RateController {
         
         javafx.scene.control.Label titleLabel = new javafx.scene.control.Label(book.getTitle());
         titleLabel.setWrapText(true);
-        titleLabel.setStyle("-fx-font-size: 10px; -fx-text-fill: #654321;");
+        titleLabel.getStyleClass().add("book-card-text");
         
         card.getChildren().addAll(imageView, titleLabel);
         return card;

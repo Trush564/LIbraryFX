@@ -131,13 +131,13 @@ public class CatalogController {
         
         javafx.scene.image.ImageView imageView = new javafx.scene.image.ImageView();
         try {
-            String path = (book.getCoverImagePath() != null && !book.getCoverImagePath().isEmpty())
-                    ? book.getCoverImagePath()
-                    : "/images/book.jpg";
-            javafx.scene.image.Image image = new javafx.scene.image.Image(getClass().getResourceAsStream(path));
+            // Завжди використовуємо book.jpg для всіх книг з resources/org/example/libraryfx/images
+            String imagePath = "/org/example/libraryfx/images/book.jpg";
+            javafx.scene.image.Image image = new javafx.scene.image.Image(
+                    CatalogController.class.getResourceAsStream(imagePath));
             imageView.setImage(image);
         } catch (Exception e) {
-            System.err.println("Failed to load image: " + book.getCoverImagePath() + " - " + e.getMessage());
+            System.err.println("Failed to load book image: " + e.getMessage());
         }
         imageView.setFitHeight(150);
         imageView.setFitWidth(100);
@@ -145,49 +145,16 @@ public class CatalogController {
         
         javafx.scene.control.Label titleLabel = new javafx.scene.control.Label(book.getTitle());
         titleLabel.setWrapText(true);
-        titleLabel.setStyle("-fx-font-size: 10px; -fx-text-fill: #654321;");
+        titleLabel.getStyleClass().add("book-card-text");
         
         card.getChildren().addAll(imageView, titleLabel);
         return card;
     }
     
     private void highlightActiveButton(Button button) {
-        if (historyButton != null) {
-            historyButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            historyButton.setFocusTraversable(false);
-        }
-        if (searchButton != null) {
-            searchButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            searchButton.setFocusTraversable(false);
-        }
-        if (catalogButton != null) {
-            catalogButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            catalogButton.setFocusTraversable(false);
-        }
-        if (reserveButton != null) {
-            reserveButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            reserveButton.setFocusTraversable(false);
-        }
-        if (applicationsButton != null) {
-            applicationsButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            applicationsButton.setFocusTraversable(false);
-        }
-        if (rateButton != null) {
-            rateButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            rateButton.setFocusTraversable(false);
-        }
-        if (reviewsButton != null) {
-            reviewsButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            reviewsButton.setFocusTraversable(false);
-        }
-        if (logoutButton != null) {
-            logoutButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            logoutButton.setFocusTraversable(false);
-        }
-        if (button != null) {
-            button.setStyle("-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-color: #000000; -fx-border-width: 2px; -fx-border-radius: 3px; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;");
-            button.setFocusTraversable(false);
-        }
+        ButtonStyleUtils.setActiveButton(button, 
+            historyButton, searchButton, catalogButton, reserveButton, 
+            applicationsButton, rateButton, reviewsButton, logoutButton);
     }
     
     @FXML

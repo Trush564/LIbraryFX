@@ -81,38 +81,17 @@ public class MainprofileController {
     }
     
     private void resetButtonStyles() {
-        // Встановлюємо бежевий фон з темним текстом для всіх кнопок (стандартний вигляд)
-        if (historyButton != null) {
-            historyButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            historyButton.setFocusTraversable(false);
-        }
-        if (searchButton != null) {
-            searchButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            searchButton.setFocusTraversable(false);
-        }
-        if (catalogButton != null) {
-            catalogButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            catalogButton.setFocusTraversable(false);
-        }
-        if (reserveButton != null) {
-            reserveButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            reserveButton.setFocusTraversable(false);
-        }
-        if (applicationsButton != null) {
-            applicationsButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            applicationsButton.setFocusTraversable(false);
-        }
-        if (rateButton != null) {
-            rateButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            rateButton.setFocusTraversable(false);
-        }
-        if (reviewsButton != null) {
-            reviewsButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            reviewsButton.setFocusTraversable(false);
-        }
-        if (logoutButton != null) {
-            logoutButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            logoutButton.setFocusTraversable(false);
+        // Встановлюємо стандартний вигляд для всіх кнопок через CSS класи
+        Button[] buttons = {historyButton, searchButton, catalogButton, reserveButton, 
+                           applicationsButton, rateButton, reviewsButton, logoutButton};
+        for (Button btn : buttons) {
+            if (btn != null) {
+                btn.getStyleClass().removeAll("sidebar-button-active");
+                if (!btn.getStyleClass().contains("sidebar-button")) {
+                    btn.getStyleClass().add("sidebar-button");
+                }
+                btn.setFocusTraversable(false);
+            }
         }
     }
     

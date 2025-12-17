@@ -16,42 +16,42 @@
    <left>
       <VBox prefHeight="200.0" prefWidth="150.0" style="-fx-background-color: #654321;" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#onHistoryButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Історія">
+            <Button mnemonicParsing="false" onAction="#onHistoryButtonClick" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Історія">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Пошук книги">
+            <Button mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Пошук книги">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Каталог книг">
+            <Button mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Каталог книг">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#onReserveButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Забронювати">
+            <Button mnemonicParsing="false" onAction="#onReserveButtonClick" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Забронювати">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#onApplicationsButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Подані заяви">
+            <Button mnemonicParsing="false" onAction="#onApplicationsButtonClick" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Подані заяви">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="rateButton" mnemonicParsing="false" onAction="#onRateButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Оцінити книгу">
+            <Button fx:id="rateButton" mnemonicParsing="false" onAction="#onRateButtonClick" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Оцінити книгу">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#onReviewsButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Відгуки">
+            <Button mnemonicParsing="false" onAction="#onReviewsButtonClick" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Відгуки">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onLogoutButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Вийти">
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onLogoutButtonClick" prefHeight="20.0" prefWidth="100.0" styleClass="sidebar-button" text="Вийти">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>

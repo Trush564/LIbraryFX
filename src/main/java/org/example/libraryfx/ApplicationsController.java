@@ -2,11 +2,15 @@ package org.example.libraryfx;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.example.libraryfx.model.UserSession;
 import org.example.libraryfx.service.ReservationService;
@@ -48,49 +52,7 @@ public class ApplicationsController {
     private Label userEmailLabel;
     
     @FXML
-    private TextField app1Title;
-    
-    @FXML
-    private TextField app1Genre;
-    
-    @FXML
-    private TextField app1Description;
-    
-    @FXML
-    private TextField app1Status;
-    
-    @FXML
-    private TextField app1BookingDate;
-    
-    @FXML
-    private TextField app2Title;
-    
-    @FXML
-    private TextField app2Genre;
-    
-    @FXML
-    private TextField app2Description;
-    
-    @FXML
-    private TextField app2Status;
-    
-    @FXML
-    private TextField app2BookingDate;
-    
-    @FXML
-    private TextField app3Title;
-    
-    @FXML
-    private TextField app3Genre;
-    
-    @FXML
-    private TextField app3Description;
-    
-    @FXML
-    private TextField app3Status;
-    
-    @FXML
-    private TextField app3BookingDate;
+    private VBox applicationsContainer;
     
     @FXML
     private void initialize() {
@@ -123,76 +85,76 @@ public class ApplicationsController {
     }
     
     private void highlightActiveButton(Button button) {
-        if (historyButton != null) {
-            historyButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            historyButton.setFocusTraversable(false);
-        }
-        if (searchNavButton != null) {
-            searchNavButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            searchNavButton.setFocusTraversable(false);
-        }
-        if (applicationsButton != null) {
-            applicationsButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            applicationsButton.setFocusTraversable(false);
-        }
-        if (rateButton != null) {
-            rateButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            rateButton.setFocusTraversable(false);
-        }
-        if (reviewsButton != null) {
-            reviewsButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            reviewsButton.setFocusTraversable(false);
-        }
-        if (logoutButton != null) {
-            logoutButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            logoutButton.setFocusTraversable(false);
-        }
-        if (catalogButton != null) {
-            catalogButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            catalogButton.setFocusTraversable(false);
-        }
-        if (button != null) {
-            button.setStyle("-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-color: #000000; -fx-border-width: 2px; -fx-border-radius: 3px; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;");
-            button.setFocusTraversable(false);
-        }
+        ButtonStyleUtils.setActiveButton(button, 
+            historyButton, searchNavButton, catalogButton, applicationsButton, 
+            rateButton, reviewsButton, logoutButton);
     }
     
     private void loadApplications() {
+        if (applicationsContainer == null) return;
+        applicationsContainer.getChildren().clear();
+        
         UserSession session = HelloApplication.getCurrentUser();
         if (session == null) return;
         
         List<Map<String, Object>> reservations = ReservationService.getUserReservations(session.getUserId());
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         
-        TextField[] titles = {app1Title, app2Title, app3Title};
-        TextField[] genres = {app1Genre, app2Genre, app3Genre};
-        TextField[] descriptions = {app1Description, app2Description, app3Description};
-        TextField[] statuses = {app1Status, app2Status, app3Status};
-        TextField[] bookingDates = {app1BookingDate, app2BookingDate, app3BookingDate};
-        
-        for (int i = 0; i < Math.min(reservations.size(), 3); i++) {
-            Map<String, Object> reservation = reservations.get(i);
-            if (titles[i] != null) titles[i].setText((String) reservation.get("title"));
-            if (genres[i] != null) genres[i].setText((String) reservation.get("genre"));
-            if (descriptions[i] != null) {
-                String author = (String) reservation.get("author");
-                descriptions[i].setText(author != null ? author : "");
-            }
-            if (statuses[i] != null) {
-                String status = (String) reservation.get("status");
-                String statusText = switch (status != null ? status : "") {
-                    case "PENDING" -> "В очікуванні";
-                    case "APPROVED" -> "Схвалено";
-                    case "REJECTED" -> "Відхилено";
-                    default -> status != null ? status : "";
-                };
-                statuses[i].setText(statusText);
-            }
-            if (bookingDates[i] != null) {
-                java.sql.Date reservationDate = (java.sql.Date) reservation.get("reservationDate");
-                bookingDates[i].setText(reservationDate != null ? dateFormat.format(reservationDate) : "");
-            }
+        for (Map<String, Object> reservation : reservations) {
+            HBox applicationCard = createApplicationCard(reservation, dateFormat);
+            applicationsContainer.getChildren().add(applicationCard);
         }
+    }
+    
+    private HBox createApplicationCard(Map<String, Object> reservation, SimpleDateFormat dateFormat) {
+        HBox card = new HBox(15);
+        card.setAlignment(Pos.CENTER_LEFT);
+        card.getStyleClass().add("book-card");
+        card.setPrefWidth(Double.MAX_VALUE);
+        
+        // Обкладинка книги зліва - завжди використовуємо book.jpg з resources/org/example/libraryfx/images
+        ImageView coverView = new ImageView();
+        try {
+            Image image = new Image(ApplicationsController.class.getResourceAsStream("/org/example/libraryfx/images/book.jpg"));
+            coverView.setImage(image);
+        } catch (Exception e) {
+            System.err.println("Failed to load book image: " + e.getMessage());
+        }
+        coverView.setFitHeight(120);
+        coverView.setFitWidth(80);
+        coverView.setPreserveRatio(true);
+        
+        // Деталі справа
+        VBox detailsBox = new VBox(8);
+        detailsBox.setAlignment(Pos.CENTER_LEFT);
+        
+        Label titleLabel = new Label("Назва: " + (reservation.get("title") != null ? reservation.get("title").toString() : ""));
+        titleLabel.getStyleClass().add("book-card-label");
+        
+        Label genreLabel = new Label("Жанр: " + (reservation.get("genre") != null ? reservation.get("genre").toString() : ""));
+        genreLabel.getStyleClass().add("book-card-label");
+        
+        Label authorLabel = new Label("Опис: " + (reservation.get("author") != null ? reservation.get("author").toString() : ""));
+        authorLabel.getStyleClass().add("book-card-label");
+        
+        String status = (String) reservation.get("status");
+        String statusText = switch (status != null ? status : "") {
+            case "PENDING" -> "В очікуванні";
+            case "APPROVED" -> "Схвалено";
+            case "REJECTED" -> "Відхилено";
+            default -> status != null ? status : "";
+        };
+        Label statusLabel = new Label("Статус: " + statusText);
+        statusLabel.getStyleClass().add("book-card-label");
+        
+        java.sql.Date reservationDate = (java.sql.Date) reservation.get("reservationDate");
+        Label bookingDateLabel = new Label("Дата бронювання: " + (reservationDate != null ? dateFormat.format(reservationDate) : ""));
+        bookingDateLabel.getStyleClass().add("book-card-label");
+        
+        detailsBox.getChildren().addAll(titleLabel, genreLabel, authorLabel, statusLabel, bookingDateLabel);
+        
+        card.getChildren().addAll(coverView, detailsBox);
+        return card;
     }
     
     @FXML

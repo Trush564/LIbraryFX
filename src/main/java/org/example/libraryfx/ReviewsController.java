@@ -117,18 +117,7 @@ public class ReviewsController {
     }
     
     private void highlightActiveButton(Button button) {
-        if (reviewsButton != null) {
-            reviewsButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            reviewsButton.setFocusTraversable(false);
-        }
-        if (catalogButton != null) {
-            catalogButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            catalogButton.setFocusTraversable(false);
-        }
-        if (button != null) {
-            button.setStyle("-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-color: #000000; -fx-border-width: 2px; -fx-border-radius: 3px; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;");
-            button.setFocusTraversable(false);
-        }
+        ButtonStyleUtils.setActiveButton(button, reviewsButton, catalogButton, logoutButton);
     }
     
     private void loadReviews() {

@@ -49,7 +49,7 @@ public class ReservationService {
         try (Connection conn = DatabaseConnection.getConnection()) {
             String query = """
                 SELECT r.id, r.reservation_status, b.title, b.genre, b.author, r.reservation_date, 
-                       r.pickup_start_date, r.pickup_end_date, r.reserved_for_group, r.group_name
+                       r.pickup_start_date, r.pickup_end_date, r.reserved_for_group, r.group_name, b.cover_image_path
                 FROM reservations r
                 JOIN books b ON r.book_id = b.id
                 WHERE r.user_id = ?
@@ -69,6 +69,7 @@ public class ReservationService {
                 reservation.put("pickupEndDate", rs.getDate("pickup_end_date"));
                 reservation.put("forGroup", rs.getBoolean("reserved_for_group"));
                 reservation.put("groupName", rs.getString("group_name"));
+                reservation.put("coverImagePath", rs.getString("cover_image_path"));
                 reservations.add(reservation);
             }
         } catch (SQLException e) {

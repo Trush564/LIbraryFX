@@ -70,38 +70,9 @@ public class SearchController {
     }
     
     private void highlightActiveButton(Button button) {
-        if (historyButton != null) {
-            historyButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            historyButton.setFocusTraversable(false);
-        }
-        if (searchNavButton != null) {
-            searchNavButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            searchNavButton.setFocusTraversable(false);
-        }
-        if (catalogButton != null) {
-            catalogButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            catalogButton.setFocusTraversable(false);
-        }
-        if (applicationsButton != null) {
-            applicationsButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            applicationsButton.setFocusTraversable(false);
-        }
-        if (rateButton != null) {
-            rateButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            rateButton.setFocusTraversable(false);
-        }
-        if (reviewsButton != null) {
-            reviewsButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            reviewsButton.setFocusTraversable(false);
-        }
-        if (logoutButton != null) {
-            logoutButton.setStyle("-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;");
-            logoutButton.setFocusTraversable(false);
-        }
-        if (button != null) {
-            button.setStyle("-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-color: #000000; -fx-border-width: 2px; -fx-border-radius: 3px; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;");
-            button.setFocusTraversable(false);
-        }
+        ButtonStyleUtils.setActiveButton(button, 
+            historyButton, searchNavButton, catalogButton, applicationsButton, 
+            rateButton, reviewsButton, logoutButton);
     }
     
     private void loadUserData() {
@@ -151,33 +122,31 @@ public class SearchController {
         
         for (Book book : books) {
             HBox resultBox = new HBox(10);
-            resultBox.setStyle("-fx-background-color: #FFFFFF; -fx-padding: 10; -fx-border-radius: 5; -fx-border-color: #CCCCCC; -fx-border-width: 1;");
+            resultBox.getStyleClass().add("search-result-card");
             resultBox.setPrefWidth(Double.MAX_VALUE);
             VBox.setMargin(resultBox, new javafx.geometry.Insets(0, 0, 10, 0));
             
             ImageView cover = new ImageView();
             try {
-                String path = (book.getCoverImagePath() != null && !book.getCoverImagePath().isEmpty())
-                        ? book.getCoverImagePath()
-                        : "/images/book.jpg";
-                Image image = new Image(getClass().getResourceAsStream(path));
+                // Завжди використовуємо book.jpg для всіх книг з resources/org/example/libraryfx/images
+                String imagePath = "/org/example/libraryfx/images/book.jpg";
+                Image image = new Image(SearchController.class.getResourceAsStream(imagePath));
                 cover.setImage(image);
             } catch (Exception e) {
-                System.err.println("Failed to load image: " + book.getCoverImagePath() + " - " + e.getMessage());
+                System.err.println("Failed to load book image: " + e.getMessage());
             }
             cover.setFitHeight(100);
             cover.setFitWidth(70);
             cover.setPreserveRatio(true);
             
             VBox detailsBox = new VBox(5);
-            detailsBox.getChildren().add(new Label("Назва: " + book.getTitle()));
-            detailsBox.getChildren().add(new Label("Автор: " + book.getAuthor()));
-            detailsBox.getChildren().add(new Label("Жанр: " + book.getGenre()));
-            for (javafx.scene.Node node : detailsBox.getChildren()) {
-                if (node instanceof Label) {
-                    ((Label) node).setStyle("-fx-text-fill: #654321;");
-                }
-            }
+            Label titleLabel = new Label("Назва: " + book.getTitle());
+            titleLabel.getStyleClass().add("book-card-label");
+            Label authorLabel = new Label("Автор: " + book.getAuthor());
+            authorLabel.getStyleClass().add("book-card-label");
+            Label genreLabel = new Label("Жанр: " + book.getGenre());
+            genreLabel.getStyleClass().add("book-card-label");
+            detailsBox.getChildren().addAll(titleLabel, authorLabel, genreLabel);
             
             resultBox.getChildren().addAll(cover, detailsBox);
             searchResultsContainer.getChildren().add(resultBox);
