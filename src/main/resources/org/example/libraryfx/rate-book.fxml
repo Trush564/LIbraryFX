@@ -70,17 +70,17 @@
                   <Font size="14.0" />
                </font>
             </Button>
-            <Label layoutX="60.0" layoutY="16.0" text="Student">
+            <Label fx:id="userRoleLabel" layoutX="60.0" layoutY="16.0" text="Користувач">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="61.0" layoutY="39.0" text="y.tyha23">
+            <Label fx:id="userLoginLabel" layoutX="61.0" layoutY="39.0" text="login">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="9.0" layoutY="67.0" text="yuliatukha@gmail.com" />
+            <Label fx:id="userEmailLabel" layoutX="9.0" layoutY="67.0" text="email@example.com" />
          </children>
       </Pane>
    </top>

@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.example.libraryfx.model.UserSession;
@@ -36,6 +37,15 @@ public class ApplicationsController {
     
     @FXML
     private Button catalogButton;
+    
+    @FXML
+    private Label userRoleLabel;
+    
+    @FXML
+    private Label userLoginLabel;
+    
+    @FXML
+    private Label userEmailLabel;
     
     @FXML
     private TextField app1Title;
@@ -86,6 +96,30 @@ public class ApplicationsController {
     private void initialize() {
         highlightActiveButton(applicationsButton);
         loadApplications();
+        loadUserData();
+    }
+    
+    private void loadUserData() {
+        UserSession session = HelloApplication.getCurrentUser();
+        if (session != null && session.getUser() != null) {
+            var user = session.getUser();
+            if (userRoleLabel != null) {
+                String roleText = switch (user.getRole()) {
+                    case "student" -> "Студент";
+                    case "teacher" -> "Викладач";
+                    case "librarian" -> "Бібліотекар";
+                    case "admin" -> "Адміністратор";
+                    default -> "Користувач";
+                };
+                userRoleLabel.setText(roleText);
+            }
+            if (userLoginLabel != null) {
+                userLoginLabel.setText(user.getLogin());
+            }
+            if (userEmailLabel != null) {
+                userEmailLabel.setText(user.getEmail());
+            }
+        }
     }
     
     private void highlightActiveButton(Button button) {

@@ -5,10 +5,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.example.libraryfx.model.UserSession;
 import org.example.libraryfx.model.Book;
 import org.example.libraryfx.service.BookService;
 
@@ -62,12 +64,45 @@ public class CatalogController {
     private ScrollPane scrollPane;
     
     @FXML
+    private Label userRoleLabel;
+    
+    @FXML
+    private Label userLoginLabel;
+    
+    @FXML
+    private Label userEmailLabel;
+    
+    @FXML
     private void initialize() {
         highlightActiveButton(catalogButton);
         loadBooksByCategory();
         // Встановлюємо стиль для ScrollPane, щоб прибрати білий фон
         if (scrollPane != null) {
             scrollPane.setStyle("-fx-background-color: #F4E4BC; -fx-control-inner-background: #F4E4BC;");
+        }
+        loadUserData();
+    }
+    
+    private void loadUserData() {
+        UserSession session = HelloApplication.getCurrentUser();
+        if (session != null && session.getUser() != null) {
+            var user = session.getUser();
+            if (userRoleLabel != null) {
+                String roleText = switch (user.getRole()) {
+                    case "student" -> "Студент";
+                    case "teacher" -> "Викладач";
+                    case "librarian" -> "Бібліотекар";
+                    case "admin" -> "Адміністратор";
+                    default -> "Користувач";
+                };
+                userRoleLabel.setText(roleText);
+            }
+            if (userLoginLabel != null) {
+                userLoginLabel.setText(user.getLogin());
+            }
+            if (userEmailLabel != null) {
+                userEmailLabel.setText(user.getEmail());
+            }
         }
     }
     
@@ -95,13 +130,14 @@ public class CatalogController {
         card.setPrefWidth(100);
         
         javafx.scene.image.ImageView imageView = new javafx.scene.image.ImageView();
-        if (book.getCoverImagePath() != null && !book.getCoverImagePath().isEmpty()) {
-            try {
-                javafx.scene.image.Image image = new javafx.scene.image.Image(getClass().getResourceAsStream(book.getCoverImagePath()));
-                imageView.setImage(image);
-            } catch (Exception e) {
-                System.err.println("Failed to load image: " + book.getCoverImagePath() + " - " + e.getMessage());
-            }
+        try {
+            String path = (book.getCoverImagePath() != null && !book.getCoverImagePath().isEmpty())
+                    ? book.getCoverImagePath()
+                    : "/images/book.jpg";
+            javafx.scene.image.Image image = new javafx.scene.image.Image(getClass().getResourceAsStream(path));
+            imageView.setImage(image);
+        } catch (Exception e) {
+            System.err.println("Failed to load image: " + book.getCoverImagePath() + " - " + e.getMessage());
         }
         imageView.setFitHeight(150);
         imageView.setFitWidth(100);

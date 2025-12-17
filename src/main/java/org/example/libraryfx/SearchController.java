@@ -13,6 +13,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.example.libraryfx.model.UserSession;
 import org.example.libraryfx.model.Book;
 import org.example.libraryfx.service.BookService;
 
@@ -54,8 +55,18 @@ public class SearchController {
     private VBox searchResultsContainer;
     
     @FXML
+    private Label userRoleLabel;
+    
+    @FXML
+    private Label userLoginLabel;
+    
+    @FXML
+    private Label userEmailLabel;
+    
+    @FXML
     private void initialize() {
         highlightActiveButton(searchNavButton);
+        loadUserData();
     }
     
     private void highlightActiveButton(Button button) {
@@ -93,6 +104,29 @@ public class SearchController {
         }
     }
     
+    private void loadUserData() {
+        UserSession session = HelloApplication.getCurrentUser();
+        if (session != null && session.getUser() != null) {
+            var user = session.getUser();
+            if (userRoleLabel != null) {
+                String roleText = switch (user.getRole()) {
+                    case "student" -> "Студент";
+                    case "teacher" -> "Викладач";
+                    case "librarian" -> "Бібліотекар";
+                    case "admin" -> "Адміністратор";
+                    default -> "Користувач";
+                };
+                userRoleLabel.setText(roleText);
+            }
+            if (userLoginLabel != null) {
+                userLoginLabel.setText(user.getLogin());
+            }
+            if (userEmailLabel != null) {
+                userEmailLabel.setText(user.getEmail());
+            }
+        }
+    }
+    
     @FXML
     protected void onSearchActionButtonClick() {
         String searchText = searchTextField.getText();
@@ -122,13 +156,14 @@ public class SearchController {
             VBox.setMargin(resultBox, new javafx.geometry.Insets(0, 0, 10, 0));
             
             ImageView cover = new ImageView();
-            if (book.getCoverImagePath() != null && !book.getCoverImagePath().isEmpty()) {
-                try {
-                    Image image = new Image(getClass().getResourceAsStream(book.getCoverImagePath()));
-                    cover.setImage(image);
-                } catch (Exception e) {
-                    System.err.println("Failed to load image: " + book.getCoverImagePath() + " - " + e.getMessage());
-                }
+            try {
+                String path = (book.getCoverImagePath() != null && !book.getCoverImagePath().isEmpty())
+                        ? book.getCoverImagePath()
+                        : "/images/book.jpg";
+                Image image = new Image(getClass().getResourceAsStream(path));
+                cover.setImage(image);
+            } catch (Exception e) {
+                System.err.println("Failed to load image: " + book.getCoverImagePath() + " - " + e.getMessage());
             }
             cover.setFitHeight(100);
             cover.setFitWidth(70);

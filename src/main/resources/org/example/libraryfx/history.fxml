@@ -33,17 +33,17 @@
                   </ImageView>
                   <VBox>
                      <children>
-                        <Label text="Student" textFill="WHITE">
+                        <Label fx:id="userRoleLabel" text="Користувач" textFill="WHITE">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="y.tyha23" textFill="WHITE">
+                        <Label fx:id="userLoginLabel" text="login" textFill="WHITE">
                            <font>
                               <Font size="12.0" />
                            </font>
                         </Label>
-                        <Label text="yuliatukha@gmail.com" textFill="WHITE">
+                        <Label fx:id="userEmailLabel" text="email@example.com" textFill="WHITE">
                            <font>
                               <Font size="10.0" />
                            </font>
@@ -107,7 +107,7 @@
                <minHeight>20.0</minHeight>
                <minWidth>100.0</minWidth>
             </Button>
-            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onLogoutButtonClick" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Вийти">
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onLogoutButtonClick" prefHeight="20.0" prefWidth="100.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-focus-color: transparent; -fx-faint-focus-color: transparent; -fx-border-color: #CCCCCC; -fx-border-width: 1px; -fx-border-radius: 3px;" text="Вийти">
                <VBox.margin>
                   <Insets left="25.0" top="10.0" />
                </VBox.margin>

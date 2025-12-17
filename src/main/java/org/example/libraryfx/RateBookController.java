@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.ImageView;
@@ -46,6 +47,15 @@ public class RateBookController {
     @FXML
     private Button logoutButton;
     
+    @FXML
+    private Label userRoleLabel;
+    
+    @FXML
+    private Label userLoginLabel;
+    
+    @FXML
+    private Label userEmailLabel;
+    
     private int currentRating = 0;
     private String selectedBookTitle = ""; // Назва книги, яку оцінюють
     
@@ -59,6 +69,7 @@ public class RateBookController {
             colorAdjust.setBrightness(-0.3);
             backgroundBookImage.setEffect(colorAdjust);
         }
+        loadUserData();
     }
     
     private void setupStarHandlers() {
@@ -120,6 +131,29 @@ public class RateBookController {
         if (button != null) {
             button.setStyle("-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-color: #000000; -fx-border-width: 2px; -fx-border-radius: 3px; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;");
             button.setFocusTraversable(false);
+        }
+    }
+    
+    private void loadUserData() {
+        UserSession session = HelloApplication.getCurrentUser();
+        if (session != null && session.getUser() != null) {
+            var user = session.getUser();
+            if (userRoleLabel != null) {
+                String roleText = switch (user.getRole()) {
+                    case "student" -> "Студент";
+                    case "teacher" -> "Викладач";
+                    case "librarian" -> "Бібліотекар";
+                    case "admin" -> "Адміністратор";
+                    default -> "Користувач";
+                };
+                userRoleLabel.setText(roleText);
+            }
+            if (userLoginLabel != null) {
+                userLoginLabel.setText(user.getLogin());
+            }
+            if (userEmailLabel != null) {
+                userEmailLabel.setText(user.getEmail());
+            }
         }
     }
     

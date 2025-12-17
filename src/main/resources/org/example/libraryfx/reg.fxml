@@ -3,45 +3,53 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox style="-fx-background-color: #F4E4BC;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.libraryfx.RegController">
+<VBox alignment="TOP_CENTER" spacing="40.0" style="-fx-background-color: #F4E4BC;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.libraryfx.RegController">
+   <padding>
+      <Insets top="30.0" left="40.0" right="40.0" bottom="30.0"/>
+   </padding>
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F4E4BC;">
+      <!-- Рядок з кнопкою Назад зліва -->
+      <HBox alignment="CENTER_LEFT">
          <children>
-            <Button fx:id="backButton" layoutX="50.0" layoutY="20.0" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-border-color: #654321; -fx-border-width: 2px; -fx-border-radius: 5px;" text="Назад">
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#onBackButtonClick" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #F4E4BC; -fx-text-fill: #654321; -fx-border-color: #654321; -fx-border-width: 2px; -fx-border-radius: 5px;" text="Назад">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Label layoutX="200.0" layoutY="50.0" text="Оберіть тип реєстрації:" style="-fx-text-fill: #654321;">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
          </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F4E4BC;">
+      </HBox>
+
+      <!-- Заголовок строго по центру -->
+      <Label text="Оберіть тип реєстрації:" style="-fx-text-fill: #654321;">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+
+      <!-- Блок з кнопками типів реєстрації по центру -->
+      <VBox alignment="CENTER" spacing="20.0">
          <children>
-            <Button fx:id="teacherButton" layoutX="200.0" layoutY="30.0" mnemonicParsing="false" onAction="#onTeacherButtonClick" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-radius: 5px;" text="Викладач">
+            <Button fx:id="teacherButton" mnemonicParsing="false" onAction="#onTeacherButtonClick" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-radius: 5px;" text="Викладач">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="studentButton" layoutX="200.0" layoutY="100.0" mnemonicParsing="false" onAction="#onStudentButtonClick" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-radius: 5px;" text="Студент">
+            <Button fx:id="studentButton" mnemonicParsing="false" onAction="#onStudentButtonClick" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-radius: 5px;" text="Студент">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="librarianButton" layoutX="200.0" layoutY="170.0" mnemonicParsing="false" onAction="#onLibrarianButtonClick" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-radius: 5px;" text="Бібліотекар">
+            <Button fx:id="librarianButton" mnemonicParsing="false" onAction="#onLibrarianButtonClick" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #654321; -fx-text-fill: #F4E4BC; -fx-border-radius: 5px;" text="Бібліотекар">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
          </children>
-      </AnchorPane>
+      </VBox>
    </children>
 </VBox>
 
