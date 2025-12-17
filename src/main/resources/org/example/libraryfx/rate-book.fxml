@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
@@ -104,11 +105,31 @@
                   </Label>
                   <HBox spacing="10.0">
                      <children>
-                        <ImageView fx:id="star1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fx:id="star2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fx:id="star3" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fx:id="star4" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fx:id="star5" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="star1" text="☆">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="star2" text="☆">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="star3" text="☆">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="star4" text="☆">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="star5" text="☆">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
                      </children>
                   </HBox>
                   <Label text="Напишіть відгук:" />
@@ -118,6 +139,13 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
+                  <Label text="Відгуки про цю книгу:" textFill="#654321">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <VBox fx:id="existingReviewsContainer" spacing="10.0">
+                  </VBox>
                </children>
             </VBox>
          </children>

@@ -97,8 +97,31 @@ public class RateController {
         titleLabel.setWrapText(true);
         titleLabel.getStyleClass().add("book-card-text");
         
+        // При кліку на картку відкриваємо вікно з оцінюванням (зі зірочками)
+        card.setOnMouseClicked(event -> openRateBookPage(book.getTitle()));
+        imageView.setOnMouseClicked(event -> openRateBookPage(book.getTitle()));
+        titleLabel.setOnMouseClicked(event -> openRateBookPage(book.getTitle()));
+        
         card.getChildren().addAll(imageView, titleLabel);
         return card;
+    }
+    
+    /**
+     * Відкриває сторінку оцінювання книги (rate-book.fxml) і передає туди назву вибраної книги.
+     */
+    private void openRateBookPage(String bookTitle) {
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("rate-book.fxml"));
+            Parent root = loader.load();
+            
+            RateBookController controller = loader.getController();
+            controller.setSelectedBookTitle(bookTitle);
+            
+            Stage stage = (Stage) logoutButton.getScene().getWindow();
+            SceneUtils.switchScene(stage, root, "Оцінити книгу");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     
     private void loadUserData() {

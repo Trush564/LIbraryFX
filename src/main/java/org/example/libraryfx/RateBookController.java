@@ -15,22 +15,23 @@ import org.example.libraryfx.model.UserSession;
 import org.example.libraryfx.service.ReviewService;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class RateBookController {
     @FXML
-    private ImageView star1;
+    private Label star1;
     
     @FXML
-    private ImageView star2;
+    private Label star2;
     
     @FXML
-    private ImageView star3;
+    private Label star3;
     
     @FXML
-    private ImageView star4;
+    private Label star4;
     
     @FXML
-    private ImageView star5;
+    private Label star5;
     
     @FXML
     private TextArea reviewTextArea;
@@ -56,6 +57,9 @@ public class RateBookController {
     @FXML
     private Label userEmailLabel;
     
+    @FXML
+    private javafx.scene.layout.VBox existingReviewsContainer;
+    
     private int currentRating = 0;
     private String selectedBookTitle = ""; // Назва книги, яку оцінюють
     
@@ -63,6 +67,7 @@ public class RateBookController {
     private void initialize() {
         highlightActiveButton(rateButton);
         setupStarHandlers();
+        updateStarColors(0);
         // Встановлюємо розмиття для фонового зображення
         if (backgroundBookImage != null) {
             ColorAdjust colorAdjust = new ColorAdjust();
@@ -70,6 +75,7 @@ public class RateBookController {
             backgroundBookImage.setEffect(colorAdjust);
         }
         loadUserData();
+        // Якщо назву книги вже передали до ініціалізації, можна завантажити відгуки пізніше через setSelectedBookTitle
     }
     
     private void setupStarHandlers() {
@@ -119,8 +125,18 @@ public class RateBookController {
     
     private void updateStarColors(int hoverRating) {
         int rating = hoverRating > 0 ? hoverRating : currentRating;
-        // Тут можна встановити різні зображення для заповнених та порожніх зірок
-        // Поки що просто оновлюємо стилі
+        Label[] stars = {star1, star2, star3, star4, star5};
+        for (int i = 0; i < stars.length; i++) {
+            Label star = stars[i];
+            if (star == null) continue;
+            if (i < rating) {
+                star.setText("★");
+                star.setStyle("-fx-text-fill: #FFD700; -fx-cursor: hand;");
+            } else {
+                star.setText("☆");
+                star.setStyle("-fx-text-fill: #CCCCCC; -fx-cursor: hand;");
+            }
+        }
     }
     
     private void highlightActiveButton(Button button) {
@@ -192,6 +208,7 @@ public class RateBookController {
 
     public void setSelectedBookTitle(String bookTitle) {
         this.selectedBookTitle = bookTitle;
+        loadExistingReviews();
     }
 
     private void showAlert(String title, String message) {
@@ -200,6 +217,45 @@ public class RateBookController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+    
+    /**
+     * Завантажує існуючі відгуки для вибраної книги та показує їх під формою.
+     */
+    private void loadExistingReviews() {
+        if (existingReviewsContainer == null || selectedBookTitle == null || selectedBookTitle.isEmpty()) {
+            return;
+        }
+        existingReviewsContainer.getChildren().clear();
+        
+        var reviews = ReviewService.getReviews(selectedBookTitle);
+        java.text.SimpleDateFormat dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd");
+        
+        if (reviews.isEmpty()) {
+            Label noReviews = new Label("Відгуків для цієї книги ще немає.");
+            noReviews.setStyle("-fx-text-fill: #654321;");
+            existingReviewsContainer.getChildren().add(noReviews);
+            return;
+        }
+        
+        for (Map<String, Object> review : reviews) {
+            String user = (String) review.get("userLogin");
+            int rating = (Integer) review.get("rating");
+            String comment = (String) review.get("comment");
+            java.sql.Timestamp ts = (java.sql.Timestamp) review.get("reviewDate");
+            String date = ts != null ? dateFormat.format(ts) : "";
+            
+            Label header = new Label(user + " — " + "★".repeat(rating) + "☆".repeat(5 - rating) + " (" + date + ")");
+            header.setStyle("-fx-text-fill: #654321; -fx-font-weight: bold;");
+            
+            Label text = new Label(comment);
+            text.setWrapText(true);
+            text.setStyle("-fx-text-fill: #654321;");
+            
+            javafx.scene.layout.VBox box = new javafx.scene.layout.VBox(3, header, text);
+            box.setStyle("-fx-background-color: #FFFFFF; -fx-padding: 8; -fx-background-radius: 5;");
+            existingReviewsContainer.getChildren().add(box);
+        }
     }
     
     @FXML
